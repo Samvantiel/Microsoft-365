@@ -6,3 +6,9 @@ Used verbal languages:
 
 Code languages:
 - Powershell
+
+Microsoft 365 Toolbox
+
+includes:
+
+- New user
