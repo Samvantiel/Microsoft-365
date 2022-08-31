@@ -1,3 +1,22 @@
+# Select new User
+$menu1 = New-Object System.Management.Automation.Host.ChoiceDescription '&user', 'Add a new user account'
+$menu2 = New-Object System.Management.Automation.Host.ChoiceDescription '&else', '?'
+$options1 = [System.Management.Automation.Host.ChoiceDescription[]]($menu1, $menu2)
+
+$title1 = 'Toolbox selection'
+$message1 = 'What do you want to do?'
+$result1 = $host.ui.PromptForChoice($title1, $message1, $options1, 0)
+
+switch ($result1)
+{
+    0 { 'Menu 1 is selected - Create a new User' }
+    1 { '?'}
+    2 { '?'}
+}
+if ($result1 -eq 0) {
+    "Menu 1 is selected - Create a new User"
+
+
 clear-host
 # Cleaning up en preparing temp directory
 Write-host "Creating Temp directory"
@@ -147,6 +166,7 @@ if ($result -eq 0) {
 }else{
     Write-Host debug2
     New-MsolUser -FirstName $firstname -LastName $Lastname -DisplayName $displayname -UserPrincipalName $upn'@'$finaldomain -Password $manualpasswordentry -PasswordNeverExpires $true -LicenseAssignment $finallicence -UsageLocation "NL"|  Select-Object -Property Displayname, UserPrincipalName, Password
+}
 }
 
 
