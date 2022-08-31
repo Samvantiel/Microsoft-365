@@ -15,7 +15,7 @@ try
 }
 catch 
 {
-    if ($cred -eq $null) {Connect-MsolService}
+    if ($null -eq $cred) {Connect-MsolService}
     Write-Output "Connecting to Office 365..."
 
 }
