@@ -86,3 +86,4 @@ Remove-Item C:\Temp\domain\domainvalue.csv
 Remove-Item C:\Temp\domain
 
 Write-Host De user $firstname $Lastname is aangemaakt met de email $upn'@'$finaldomain
+Test-Connection
